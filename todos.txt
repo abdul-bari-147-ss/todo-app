@@ -1,6 +1,6 @@
-add anew player
-Update a OS
-hello
+memberoperating system
 new arg default
-hi
-hello
+add a new players
+my newest todo is added
+last todo
+and lastly
