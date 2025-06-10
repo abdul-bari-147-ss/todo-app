@@ -1,5 +1,3 @@
-memberoperating system
-new arg default
 add a new players
 my newest todo is added
 last todo

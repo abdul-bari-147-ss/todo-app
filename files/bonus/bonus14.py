@@ -1,16 +1,27 @@
+import FreeSimpleGUI as sg
 from converters14 import convert
-from parser14 import parse
 
-feet_inches =  input("enter feet and inches:")
-
-parsed = parse(feet_inches)
-
-result = convert(parsed['feet'],parsed['inches'])
-print(f"{parsed['feet']} feet and {parsed['inches']} is equal to {result}")
+label1 = sg.Text("Enter feet:")
+input1 = sg.Input(tooltip="enter value")
 
 
+label2 = sg.Text("Enter inches:")
+input2= sg.Input(tooltip="Enter Value")
 
-if result<1:
-    print("Kid is too small.")
-else:
-    print("Kid can use the slide.")
+convert_button = sg.Button("Convert")
+o_l = sg.Text(" ",key= "output")
+
+window = sg.Window("Converter",layout=[[label1,input1],
+                                       [label2,input2],
+                                       [convert_button,o_l]])
+
+while True:
+    event,values = window.read()
+    feet = float(values["feet"])
+    inches = float(values["inches"])
+
+    result = convert(feet,inches)
+    window["output"].update(value = f"{result} m",text_color="white")
+
+window.read()
+window.close()
